@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import random
 
-def ekle_katilimci():
+def ekle_katilimci(event = None):
     isim = entry_katilimci.get()
     if isim:
         katilimcilar.append(isim)
@@ -26,6 +26,8 @@ label_giris.pack()
 
 entry_katilimci = tk.Entry(root)
 entry_katilimci.pack()
+
+entry_katilimci.bind("<Return>", ekle_katilimci)
 
 button_ekle = tk.Button(root, text="Ekle", command=ekle_katilimci)
 button_ekle.pack()
